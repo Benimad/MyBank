@@ -1,0 +1,19 @@
+{
+  "name": "mybank-functions",
+  "version": "1.0.0",
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "deploy": "firebase deploy --only functions"
+  },
+  "dependencies": {
+    "@types/markdown-it": "^14.1.2",
+    "acorn": "^8.15.0",
+    "firebase-admin": "^11.10.0",
+    "firebase-functions": "^4.4.0",
+    "markdown-it": "^14.1.0"
+  }
+}

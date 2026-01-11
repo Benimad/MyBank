@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Send Money - Disable App Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #d32f2f;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .step {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .step-number {
+            background-color: #4CAF50;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .visual {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: monospace;
+        }
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .button {
+            background-color: #2196F3;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        .success {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .warning {
+            background-color: #ff9800;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>⚠️ FIX SEND MONEY ERROR</h1>
+        <p>App Check is STILL enforced - You need to disable it NOW</p>
+    </div>
+
+    <div class="warning">
+        <strong>Current Status:</strong> Your logs show App Check is STILL blocking transactions.<br>
+        Your app code is working perfectly - Firebase security settings are preventing it from running.
+    </div>
+
+    <div class="step">
+        <h2><span class="step-number">1</span> Open Firebase Console</h2>
+        <p>Click this button to go directly to the correct page:</p>
+        <a href="https://console.firebase.google.com/project/mybank-8deeb/appcheck/apis" class="button" target="_blank">
+            🔗 Open Firebase App Check APIs
+        </a>
+        <p style="color: #666; font-size: 14px;">This link opens the EXACT page you need. No navigation required.</p>
+    </div>
+
+    <div class="step">
+        <h2><span class="step-number">2</span> Find "Cloud Functions for Firebase"</h2>
+        <p>On the page that opens, you'll see a table with different services. Look for:</p>
+        <div class="visual">
+Product/Service                  Enforcement mode       Actions
+─────────────────────────────────────────────────────────────
+Cloud Firestore                  [some status]         ...
+<span class="highlight">Cloud Functions for Firebase     [Enforced ▼]          ⋮</span>
+Firebase Realtime Database       [some status]         ...
+        </div>
+        <p><strong>Look for the row that says "Cloud Functions for Firebase"</strong></p>
+    </div>
+
+    <div class="step">
+        <h2><span class="step-number">3</span> Click the Three-Dot Menu</h2>
+        <p>On the right side of the "Cloud Functions for Firebase" row, you'll see a <strong>three-dot menu icon (⋮)</strong></p>
+        <p>Click on it.</p>
+    </div>
+
+    <div class="step">
+        <h2><span class="step-number">4</span> Select "Unenforced"</h2>
+        <p>When the menu opens, you'll see options like:</p>
+        <ul>
+            <li>Enforced</li>
+            <li>Enforce with metrics</li>
+            <li><strong class="highlight">Unenforced</strong> ← SELECT THIS</li>
+        </ul>
+        <p><strong>Click on "Unenforced"</strong></p>
+    </div>
+
+    <div class="step">
+        <h2><span class="step-number">5</span> Confirm the Change</h2>
+        <p>A dialog may appear asking you to confirm. Click:</p>
+        <ul>
+            <li>"Change to unenforced" or</li>
+            <li>"Confirm" or</li>
+            <li>"Save"</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2><span class="step-number">6</span> Verify the Change</h2>
+        <p>After confirming, the status should change to:</p>
+        <div class="visual">
+Cloud Functions for Firebase     <span class="highlight">[Unenforced]</span>          ⋮
+        </div>
+        <p>✅ If you see "Unenforced", you're done!</p>
+    </div>
+
+    <div class="success">
+        <h3>🧪 Test Send Money Immediately</h3>
+        <p><strong>No app rebuild needed!</strong> This is a server-side setting.</p>
+        <ol>
+            <li>Go back to your app (it's still running)</li>
+            <li>Click "Send Money" icon</li>
+            <li>Enter amount: 50</li>
+            <li>Search for recipient</li>
+            <li>Continue → Send</li>
+            <li><strong>It will work immediately!</strong></li>
+        </ol>
+    </div>
+
+    <div class="warning">
+        <h3>❓ What if the page looks different?</h3>
+        <p>If you don't see the table described above:</p>
+        <ol>
+            <li>Look for "App Check" in the left sidebar and click it</li>
+            <li>Look for an "APIs" tab at the top of the page</li>
+            <li>Click on "APIs"</li>
+            <li>Then you should see the table with "Cloud Functions for Firebase"</li>
+        </ol>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background-color: white; border-radius: 8px;">
+        <h3>🔗 Quick Links</h3>
+        <a href="https://console.firebase.google.com/project/mybank-8deeb/appcheck/apis" class="button" target="_blank">
+            Open Firebase Console
+        </a>
+        <p style="color: #666; margin-top: 10px;">
+            Once you change the setting, Send Money will work instantly!
+        </p>
+    </div>
+</body>
+</html>

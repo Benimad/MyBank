@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Mode Color Palette -->
+    <color name="primary">#1152d4</color>
+    <color name="primary_dark">#0a3aa0</color>
+    <color name="background_dark">#0f172a</color>
+    <color name="surface_dark">#1e293b</color>
+    <color name="success">#10b981</color>
+    <color name="alert">#ef4444</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_300">#d1d5db</color>
+    <color name="gray_400">#9ca3af</color>
+    <color name="gray_700">#374151</color>
+    <color name="gray_800">#1f2937</color>
+    
+    <color name="ic_launcher_background">#1152d4</color>
+</resources>
