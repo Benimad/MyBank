@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyBank</string>
+    
+    <!-- Google Sign-In Web Client ID -->
+    <!-- Web Client ID from Firebase Console -->
+    <string name="default_web_client_id" translatable="false">812805576496-mrg6t1lalmlfq5jl8eok4lclvqvdq96j.apps.googleusercontent.com</string>
+</resources>

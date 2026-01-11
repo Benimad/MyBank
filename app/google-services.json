@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "812805576496",
+    "project_id": "mybank-8deeb",
+    "storage_bucket": "mybank-8deeb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812805576496:android:57cac272c2600e056e5af5",
+        "android_client_info": {
+          "package_name": "com.example.mybank"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812805576496-88n26lcrv80dkcuqdump6h4ktijgb1ga.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mybank",
+            "certificate_hash": "09200157bd72ecc6ef9e2664a05447a88c9545fc"
+          }
+        },
+        {
+          "client_id": "812805576496-mrg6t1lalmlfq5jl8eok4lclvqvdq96j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEt43jDwBOxqBww_67MKcu-TuQghR7cNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "812805576496-mrg6t1lalmlfq5jl8eok4lclvqvdq96j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
