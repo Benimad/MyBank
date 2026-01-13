@@ -103,3 +103,8 @@ functions/.firebase/
 # OS
 .DS_Store
 Thumbs.db
+
+# IDE and chat history
+.idea/firebender/*.db
+.idea/firebender/*.db-shm
+.idea/firebender/*.db-wal
